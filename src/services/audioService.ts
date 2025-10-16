@@ -14,8 +14,7 @@ export interface MorseAudioData {
 const createTone = (
   audioContext: AudioContext,
   frequency: number,
-  duration: number,
-  startTime: number
+  duration: number
 ): { buffer: AudioBuffer; duration: number } => {
   const sampleRate = audioContext.sampleRate;
   const numSamples = Math.floor((duration / 1000) * sampleRate);
@@ -60,8 +59,7 @@ export const generateMorseAudio = async (
       const { buffer } = createTone(
         audioContext,
         FREQUENCY,
-        DOT_DURATION,
-        totalDuration
+        DOT_DURATION
       );
       audioSegments.push({ buffer, startTime: totalDuration / 1000 });
       totalDuration += DOT_DURATION + SYMBOL_GAP;
@@ -69,8 +67,7 @@ export const generateMorseAudio = async (
       const { buffer } = createTone(
         audioContext,
         FREQUENCY,
-        DASH_DURATION,
-        totalDuration
+        DASH_DURATION
       );
       audioSegments.push({ buffer, startTime: totalDuration / 1000 });
       totalDuration += DASH_DURATION + SYMBOL_GAP;
@@ -115,7 +112,7 @@ export const playMorseAudio = (
 
 export const downloadMorseAudio = (
   audioBuffer: AudioBuffer,
-  filename: string = 'morse-code.wav'
+  filename: string = 'Vox.wav'
 ): void => {
   const wav = audioBufferToWav(audioBuffer);
   const blob = new Blob([wav], { type: 'audio/wav' });

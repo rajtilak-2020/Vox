@@ -7,7 +7,7 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [morseCode, setMorseCode] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
-  const [, setIsGenerating] = useState(false);
+
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState('');
 
@@ -38,15 +38,12 @@ function App() {
   const handleConvert = async () => {
     if (!morseCode || error) return;
 
-    setIsGenerating(true);
     try {
       const audioData = await generateMorseAudio(morseCode);
       audioDataRef.current = audioData;
     } catch (err) {
       setError('Failed to generate audio');
       console.error(err);
-    } finally {
-      setIsGenerating(false);
     }
   };
 
