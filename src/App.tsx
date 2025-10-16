@@ -1,12 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Volume2, Download, Copy, Check } from 'lucide-react';
 import { textToMorse, validateInput } from './utils/morseCode';
-import {
-  generateMorseAudio,
-  playMorseAudio,
-  downloadMorseAudio,
-  MorseAudioData,
-} from './services/audioService';
+import { generateMorseAudio, playMorseAudio, downloadMorseAudio, MorseAudioData} from './services/audioService';
 
 function App() {
   const [inputText, setInputText] = useState('');
@@ -100,12 +95,10 @@ function App() {
     <div className="min-h-screen bg-black text-white px-4 py-8 overflow-auto">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-            Vox
-          </h1>
-          <p className="text-green-300/70 text-lg">
-            Your Voice. Encrypted in Code.
-          </p>
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent animate-pulse">
+          Vox
+        </h1>
+          <p className="text-green-300/70 text-lg">Your Encrypted Thought.</p>
         </div>
 
         <div className="bg-black/40 backdrop-blur-lg border border-green-500/30 rounded-3xl p-8 shadow-2xl shadow-green-500/10">
@@ -197,9 +190,9 @@ function App() {
               href="https://github.com/rajtilak-2020"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-400/70 hover:text-green-400 transition-colors duration-200"
+              className="text-green-400/70 hover:text-green-400 transition-colors duration-500"
             >
-              rajtilak-2020
+              K Rajtilak
             </a>
           </p>
         </footer>
