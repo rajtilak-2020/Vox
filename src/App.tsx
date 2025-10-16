@@ -98,7 +98,7 @@ function App() {
         <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent animate-pulse">
           Vox
         </h1>
-          <p className="text-green-300/70 text-lg">Your Encrypted Thought.</p>
+          <p className="text-green-300/70 text-lg">Your Encrypted Thoughts.</p>
         </div>
 
         <div className="bg-black/40 backdrop-blur-lg border border-green-500/30 rounded-3xl p-8 shadow-2xl shadow-green-500/10">
